@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: sanad
+      POSTGRES_PASSWORD: sanad
+      POSTGRES_DB: sanad
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./init:/docker-entrypoint-initdb.d
+      - ../data/sanad:/data:ro
+volumes:
+  pgdata:
