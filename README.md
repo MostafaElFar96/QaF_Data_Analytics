@@ -1,6 +1,6 @@
 # QaF Data Analytics — Module 4 practice data
 
-## Sandbox Warehouse Listings (`docs/`)
+## Sandbox Warehouse Listings
 
 A small static website used in Class 3 to practise responsible web scraping.
 It looks like a real warehouse-listings site, but every listing, broker and phone number is fictional.
@@ -12,7 +12,7 @@ It looks like a real warehouse-listings site, but every listing, broker and phon
 Run it locally if the live site is unavailable:
 
 ```bash
-cd docs
+# from the repo folder
 python -m http.server 8000
 # then use BASE = "http://localhost:8000"
 ```
