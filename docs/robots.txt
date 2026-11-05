@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /contacts/
+Crawl-delay: 2
