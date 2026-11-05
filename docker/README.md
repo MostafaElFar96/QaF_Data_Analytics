@@ -1,23 +1,16 @@
-# Docker + PostgreSQL (VS Code option)
+# Docker + PostgreSQL
 
-The notebooks run on DuckDB by default (no Docker needed). To practise with the real PostgreSQL setup from Class 2:
+The Sanad database used in Classes 2–4. From the repo folder:
 
 ```bash
-# from the repo folder
-python data/generate_sanad_data.py      # creates data/sanad/*.csv (~15 s)
+python data/generate_sanad_data.py      # creates data/sanad/*.csv first
 cd docker
-docker compose up -d                    # first start loads the CSVs (1-2 minutes)
+docker compose up -d                    # first start runs init/01_load_sanad.sql (1-2 minutes)
 docker ps
 ```
 
-Connect from DBeaver or a notebook: host `localhost`, port `5432`, database / user / password `sanad`.
+Connection: host `localhost`, port `5432`, database / user / password `sanad`.
 
-```python
-from sqlalchemy import create_engine
-import pandas as pd
-engine = create_engine("postgresql+psycopg2://sanad:sanad@localhost:5432/sanad")
-pd.read_sql("SELECT COUNT(*) FROM orders", engine)
-```
-
-Common errors: port 5432 in use -> change to `"5433:5432"`; Docker not running -> open Docker Desktop;
-empty tables -> `docker compose down -v` then `docker compose up -d` (after generating the CSVs).
+- Reset everything (e.g. after regenerating the data): `docker compose down -v` then `docker compose up -d`
+- Stop without losing data: `docker compose stop`
+- Open a SQL prompt inside the container: `docker compose exec db psql -U sanad`

@@ -1,0 +1,11 @@
+# Module 4 notebooks (VS Code). Install inside the repo's virtual environment:
+#   python -m venv .venv  ->  activate  ->  pip install -r requirements.txt
+pandas>=2.0
+numpy>=1.24
+matplotlib>=3.7
+sqlalchemy>=2.0
+psycopg2-binary>=2.9
+requests>=2.31
+beautifulsoup4>=4.12
+ipykernel>=6.25
+duckdb>=1.0          # only used by data/check_script_numbers.py

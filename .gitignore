@@ -1,5 +1,6 @@
 data/sanad/
 data/sanad.duckdb
 data/sanad.duckdb.wal
+.venv/
 __pycache__/
 .ipynb_checkpoints/
